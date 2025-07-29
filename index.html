@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GymSupps – Kosttillskott för din träning</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome för ikoner -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-5oVnYdRUjBpoBQNb5BG56R1u4j2t5Osk2T6M7xDPL9iKg2dZbpK9S8uS2cZsi5LUwKFpZgd07zK6E6nLq5aoMg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigeringsfält -->
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">Gym<span class="accent">Supps</span></a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="about.html">Om oss</a></li>
+            <li><a href="reviews.html">Recensioner</a></li>
+            <li class="cart-btn">
+              <button id="cartButton" aria-label="Visa kundvagn">
+                <i class="fa-solid fa-shopping-cart"></i>
+                <span id="cart-count" class="cart-count">0</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero-sektion -->
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content container">
+        <h1>Styrk ditt liv</h1>
+        <p>
+          Premiumkosttillskott för alla nivåer – från nybörjare till
+          elitidrottare. Vårt sortiment hjälper dig nå dina mål.
+        </p>
+        <a href="#produkter" class="btn-primary">Handla nu</a>
+      </div>
+    </section>
+
+    <!-- Produkter -->
+    <section id="produkter" class="products-section">
+      <div class="container">
+        <h2 class="section-title">Våra produkter</h2>
+        <div id="product-list" class="product-grid"></div>
+      </div>
+    </section>
+
+    <!-- Varukorgs-overlay -->
+    <div id="cart-overlay" class="cart-overlay">
+      <div class="cart-panel">
+        <button id="closeCart" class="close-cart" aria-label="Stäng kundvagn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h2>Din varukorg</h2>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-summary">
+          <p>
+            Totalt: <span id="cart-total" class="cart-total">0 kr</span>
+          </p>
+          <button id="checkoutBtn" class="btn-primary">Till kassan</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Checkout-modalen -->
+    <div id="checkout-modal" class="checkout-modal">
+      <div class="checkout-panel">
+        <button
+          id="closeCheckout"
+          class="close-cart"
+          aria-label="Stäng kassa"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h2>Kassa</h2>
+        <form id="checkout-form" class="checkout-form">
+          <div class="form-group">
+            <label for="name">Namn</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">E‑post</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="address">Adress</label>
+            <input type="text" id="address" name="address" required />
+          </div>
+          <div class="form-group">
+            <label for="payment">Betalningsmetod</label>
+            <select id="payment" name="payment" required>
+              <option value="">Välj...</option>
+              <option value="card">Kreditkort/Debitkort</option>
+              <option value="swish">Swish</option>
+              <option value="invoice">Faktura</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary">Slutför köp</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; <span id="year"></span> GymSupps. Alla rättigheter förbehållna.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

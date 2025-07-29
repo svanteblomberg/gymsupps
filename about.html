@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Om oss – GymSupps</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-5oVnYdRUjBpoBQNb5BG56R1u4j2t5Osk2T6M7xDPL9iKg2dZbpK9S8uS2cZsi5LUwKFpZgd07zK6E6nLq5aoMg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">Gym<span class="accent">Supps</span></a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="about.html">Om oss</a></li>
+            <li><a href="reviews.html">Recensioner</a></li>
+            <li class="cart-btn">
+              <button id="cartButton" aria-label="Visa kundvagn">
+                <i class="fa-solid fa-shopping-cart"></i>
+                <span id="cart-count" class="cart-count">0</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding: 3rem 0; min-height: 70vh;">
+      <h1>Om GymSupps</h1>
+      <p style="margin-top: 1rem; max-width: 800px;">
+        GymSupps grundades av träningsentusiaster med en passion för hälsa och
+        välmående. Vi såg ett behov av kosttillskott med hög kvalitet och
+        transparent innehåll för alla som vill prestera på topp – oavsett nivå.
+      </p>
+      <p style="margin-top: 1rem; max-width: 800px;">
+        Vårt uppdrag är att ge dig de verktyg du behöver för att nå dina
+        träningsmål på ett tryggt och hållbart sätt. Vi samarbetar med
+        noggrant utvalda leverantörer och testar varje produkt innan den tas
+        in i sortimentet. För oss är det viktigt att du känner dig
+        respekterad och peppad på din resa, därför delar vi gärna med oss av
+        tips och inspiration för en aktiv livsstil.
+      </p>
+      <p style="margin-top: 1rem; max-width: 800px;">
+        Har du frågor eller behöver vägledning? Tveka inte att kontakta oss –
+        vi är här för att hjälpa dig! Låt oss bli en del av ditt team och
+        tillsammans skapa starka, friska vanor.
+      </p>
+    </main>
+
+    <!-- Varukorgs-overlay -->
+    <div id="cart-overlay" class="cart-overlay">
+      <div class="cart-panel">
+        <button id="closeCart" class="close-cart">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h2>Din varukorg</h2>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-summary">
+          <p>
+            Totalt: <span id="cart-total" class="cart-total">0 kr</span>
+          </p>
+            <button id="checkoutBtn" class="btn-primary">Till kassan</button>
+        </div>
+      </div>
+    </div>
+    <!-- Checkout-modalen -->
+    <div id="checkout-modal" class="checkout-modal">
+      <div class="checkout-panel">
+        <button id="closeCheckout" class="close-cart">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h2>Kassa</h2>
+        <form id="checkout-form" class="checkout-form">
+          <div class="form-group">
+            <label for="name">Namn</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">E‑post</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="address">Adress</label>
+            <input type="text" id="address" name="address" required />
+          </div>
+          <div class="form-group">
+            <label for="payment">Betalningsmetod</label>
+            <select id="payment" name="payment" required>
+              <option value="">Välj...</option>
+              <option value="card">Kreditkort/Debitkort</option>
+              <option value="swish">Swish</option>
+              <option value="invoice">Faktura</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary">Slutför köp</button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> GymSupps. Alla rättigheter förbehållna.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
