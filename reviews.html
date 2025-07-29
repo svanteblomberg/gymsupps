@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recensioner – GymSupps</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-5oVnYdRUjBpoBQNb5BG56R1u4j2t5Osk2T6M7xDPL9iKg2dZbpK9S8uS2cZsi5LUwKFpZgd07zK6E6nLq5aoMg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .reviews-container {
+        padding: 3rem 0;
+      }
+      .review-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+      .review-card {
+        background: var(--light-bg);
+        border-radius: 6px;
+        box-shadow: 0 2px 8px var(--shadow);
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .review-card .stars {
+        color: #f0c419;
+      }
+      .review-author {
+        font-weight: 600;
+        margin-top: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">Gym<span class="accent">Supps</span></a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="about.html">Om oss</a></li>
+            <li><a href="reviews.html">Recensioner</a></li>
+            <li class="cart-btn">
+              <button id="cartButton" aria-label="Visa kundvagn">
+                <i class="fa-solid fa-shopping-cart"></i>
+                <span id="cart-count" class="cart-count">0</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container reviews-container">
+      <h1>Vad våra kunder säger</h1>
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p>
+            “Fantastiska produkter! Jag har märkt enorma resultat sedan jag
+            började använda deras proteinpulver och BCAA. Snabb leverans och
+            trevlig kundtjänst.”
+          </p>
+          <span class="review-author">— Erik L.</span>
+        </div>
+        <div class="review-card">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <p>
+            “Bra priser och stort utbud. Jag älskar deras Omega‑3, känner mig
+            piggare och återhämtar mig snabbare efter passen. Rekommenderas!”
+          </p>
+          <span class="review-author">— Sofia K.</span>
+        </div>
+        <div class="review-card">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <p>
+            “Kreatinet ger mig extra tryck på gymmet och jag gillar att
+            ingredienserna är tydliga och rena. Kassar och kundvagnsfunktionen
+            på sidan är smidig.”
+          </p>
+            <span class="review-author">— Jonas P.</span>
+        </div>
+        <div class="review-card">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <p>
+            “Snabb leverans och fräscha produkter. Skulle vilja se fler
+            smaker på deras gainers, men annars mycket nöjd!”
+          </p>
+          <span class="review-author">— Linda M.</span>
+        </div>
+      </div>
+    </main>
+
+    <!-- Varukorg och kassa -->
+    <div id="cart-overlay" class="cart-overlay">
+      <div class="cart-panel">
+        <button id="closeCart" class="close-cart">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h2>Din varukorg</h2>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-summary">
+          <p>
+            Totalt: <span id="cart-total" class="cart-total">0 kr</span>
+          </p>
+          <button id="checkoutBtn" class="btn-primary">Till kassan</button>
+        </div>
+      </div>
+    </div>
+    <div id="checkout-modal" class="checkout-modal">
+      <div class="checkout-panel">
+        <button id="closeCheckout" class="close-cart">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h2>Kassa</h2>
+        <form id="checkout-form" class="checkout-form">
+          <div class="form-group">
+            <label for="name">Namn</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">E‑post</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="address">Adress</label>
+            <input type="text" id="address" name="address" required />
+          </div>
+          <div class="form-group">
+            <label for="payment">Betalningsmetod</label>
+            <select id="payment" name="payment" required>
+              <option value="">Välj...</option>
+              <option value="card">Kreditkort/Debitkort</option>
+              <option value="swish">Swish</option>
+              <option value="invoice">Faktura</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary">Slutför köp</button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> GymSupps. Alla rättigheter förbehållna.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
